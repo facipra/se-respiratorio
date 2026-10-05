@@ -41,9 +41,9 @@ REGLAS = [
      "Congestion nasal con fiebre ausente o leve"),
 
     # --- Nivel 3: riesgo (triangulo 3) ---
-    ("R10", lambda h: h["edad"] in ("< 5 anios", ">= 65 anios") or h["comorbilidad"] == "si",
+    ("R10", lambda h: h["edad"] in ("< 5 años", ">= 65 años") or h["comorbilidad"] == "si",
      "riesgo", "alto", "Grupo de edad o comorbilidad de riesgo"),
-    ("R11", lambda h: h["edad"] == "5 a 64 anios" and h["comorbilidad"] == "no",
+    ("R11", lambda h: h["edad"] == "5 a 64 años" and h["comorbilidad"] == "no",
      "riesgo", "bajo", "Sin factores de riesgo"),
 
     # --- Nivel 4: diagnostico orientativo (triangulo final) ---
@@ -122,7 +122,7 @@ st.caption("Especialidad: Neumologia / Medicina general · Herramienta academica
 with st.form("consulta"):
     st.subheader("Datos del paciente")
     c1, c2 = st.columns(2)
-    edad = c1.selectbox("Grupo de edad", ["< 5 anios", "5 a 64 anios", ">= 65 anios"], index=1)
+    edad = c1.selectbox("Grupo de edad", ["< 5 años", "5 a 64 años", ">= 65 años"], index=1)
     comorbilidad = c2.radio("¿Asma, EPOC, diabetes, cardiopatia o inmunosupresion?",
                             ["no", "si"], horizontal=True)
 
